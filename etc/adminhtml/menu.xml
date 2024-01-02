@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="ECInternet_DataIntegrity::menu"
+		     title="DataIntegrity"
+		     translate="title"
+		     module="ECInternet_DataIntegrity"
+		     sortOrder="50"
+		     parent="ECInternet_Base::base"
+		     dependsOnModule="ECInternet_DataIntegrity"
+		     resource="ECInternet_DataIntegrity::menu" />
+
+		<add id="ECInternet_DataIntegrity::index"
+		     title="DataIntegrity Items"
+		     translate="title"
+		     module="ECInternet_DataIntegrity"
+		     parent="ECInternet_DataIntegrity::menu"
+		     sortOrder="10"
+		     dependsOnModule="ECInternet_DataIntegrity"
+		     action="dataintegrity/index/index"
+		     resource="ECInternet_DataIntegrity::index" />
+
+		<add id="ECInternet_DataIntegrity::categoryidreport"
+		     title="Category Id Report"
+		     translate="title"
+		     module="ECInternet_DataIntegrity"
+		     parent="ECInternet_DataIntegrity::menu"
+		     sortOrder="10"
+		     dependsOnModule="ECInternet_DataIntegrity"
+		     action="dataintegrity/reports/categoryid"
+		     resource="ECInternet_DataIntegrity::categoryidreport" />
+	</menu>
+</config>

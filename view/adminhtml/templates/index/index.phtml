@@ -1,0 +1,18 @@
+<?php /** @var \Magento\Backend\Block\Template $block */ ?>
+<?php /** @var \Magento\Framework\Escaper $escaper */ ?>
+
+<?php /** @var \ECInternet\DataIntegrity\ViewModel\Index\Index $viewModel */ ?>
+<?php $viewModel = $block->getData('view_model'); ?>
+
+<div class="table-wrapper">
+    <table class="table admin__control-table">
+        <tr>
+            <th>Report</th><th>&nbsp;</th>
+        </tr>
+
+        <tr>
+            <td>Category links which include categoryId</td>
+            <td><a href="<?= $escaper->escapeUrl($viewModel->buildUrl('dataintegrity/reports/categoryId')) ?>">LINK</a></td>
+        </tr>
+    </table>
+</div>

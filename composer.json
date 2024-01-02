@@ -1,0 +1,22 @@
+{
+	"name": "ec-internet/module-data-integrity",
+	"version": "1.0.0",
+	"description": "N/A",
+	"type": "magento2-module",
+	"require": {
+		"magento/framework": "*",
+		"ecinternet/base": "1.3.2.*"
+	},
+	"license": [
+		"OSL-3.0",
+		"AFL-3.0"
+	],
+	"autoload": {
+		"files": [
+			"registration.php"
+		],
+		"psr-4": {
+			"ECInternet\\DataIntegrity\\": ""
+		}
+	}
+}

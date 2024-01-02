@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">dataintegrity_categoryid_listing.dataintegrity_categoryid_listing_data_source</item>
+		</item>
+	</argument>
+	<settings>
+		<spinner>dataintegrity_categoryid_listing_columns</spinner>
+		<deps>
+			<dep>dataintegrity_categoryid_listing.dataintegrity_categoryid_listing_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="dataintegrity_categoryid_listing_data_source" component="Magento_Ui/js/grid/provider">
+		<settings>
+			<storageConfig>
+				<param name="indexField" xsi:type="string">url_rewrite_id</param>
+			</storageConfig>
+			<updateUrl path="mui/index/render"/>
+		</settings>
+		<dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider"
+		              name="dataintegrity_categoryid_listing_data_source">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>url_rewrite_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+
+	<listingToolbar name="listing_top">
+		<settings>
+			<sticky>true</sticky>
+		</settings>
+
+		<paging name="listing_paging"/>
+	</listingToolbar>
+
+	<columns name="dataintegrity_categoryid_listing_columns">
+		<column name="url_rewrite_id">
+			<settings>
+				<filter>textRange</filter>
+				<label translate="true">ID</label>
+				<sorting>desc</sorting>
+			</settings>
+		</column>
+		<column name="store_id" class="Magento\Store\Ui\Component\Listing\Column\Store">
+			<settings>
+				<label translate="true">Store View</label>
+				<bodyTmpl>ui/grid/cells/html</bodyTmpl>
+				<sortable>false</sortable>
+			</settings>
+		</column>
+		<column name="entity_id">
+			<settings>
+				<filter>textRange</filter>
+				<label translate="true">Entity Id</label>
+			</settings>
+		</column>
+		<column name="request_path">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Request Path</label>
+			</settings>
+		</column>
+		<column name="target_path">
+			<settings>
+				<filter>text</filter>
+				<label translate="true">Target Path</label>
+			</settings>
+		</column>
+		<column name="redirect_type" component="Magento_Ui/js/grid/columns/select">
+			<settings>
+				<options class="Magento\UrlRewrite\Model\OptionProvider"/>
+				<filter>select</filter>
+				<dataType>select</dataType>
+				<label translate="true">Redirect Type</label>
+			</settings>
+		</column>
+	</columns>
+</listing>

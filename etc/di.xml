@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<!-- Add data sources to DataProvider collection -->
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="dataintegrity_categoryid_listing_data_source" xsi:type="string">ECInternet\DataIntegrity\Ui\Component\UrlRewrite\DataProvider\SearchResult</item>
+			</argument>
+		</arguments>
+	</type>
+
+	<!-- Custom Logger -->
+	<type name="ECInternet\DataIntegrity\Logger\Logger">
+		<arguments>
+			<argument name="name" xsi:type="string">DataIntegrity</argument>
+			<argument name="handlers" xsi:type="array">
+				<item name="system" xsi:type="object">ECInternet\DataIntegrity\Logger\Handler</item>
+			</argument>
+		</arguments>
+	</type>
+
+	<virtualType name="ECInternet\DataIntegrity\Ui\Component\UrlRewrite\DataProvider\SearchResult"
+	             type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">url_rewrite</argument>
+			<argument name="resourceModel" xsi:type="string">ECInternet\DataIntegrity\Model\ResourceModel\UrlRewrite</argument>
+			<argument name="identifierName" xsi:type="string">url_rewrite_id</argument>
+		</arguments>
+	</virtualType>
+</config>
