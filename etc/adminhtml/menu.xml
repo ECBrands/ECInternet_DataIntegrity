@@ -6,8 +6,8 @@
 		     title="DataIntegrity"
 		     translate="title"
 		     module="ECInternet_DataIntegrity"
-		     sortOrder="50"
 		     parent="ECInternet_Base::base"
+			 sortOrder="50"
 		     dependsOnModule="ECInternet_DataIntegrity"
 		     resource="ECInternet_DataIntegrity::menu" />
 
@@ -26,7 +26,7 @@
 		     translate="title"
 		     module="ECInternet_DataIntegrity"
 		     parent="ECInternet_DataIntegrity::menu"
-		     sortOrder="10"
+		     sortOrder="20"
 		     dependsOnModule="ECInternet_DataIntegrity"
 		     action="dataintegrity/reports/categoryid"
 		     resource="ECInternet_DataIntegrity::categoryidreport" />
